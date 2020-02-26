@@ -1,0 +1,54 @@
+{
+  "name": "share-service",
+  "version": "1.0.0",
+  "description": "share",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "egg": "^2.15.1",
+    "egg-scripts": "^2.11.0",
+    "axios": "^0.19.0",
+    "json-bigint": "^0.3.0",
+    "jssha": "^1.5.0",
+    "egg-redis": "^2.4.0",
+    "koa2-cors": "^2.0.6"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-share-service --port 7029",
+    "prod": "egg-scripts start --daemon --env=prod --title=egg-server-share-service --port 7029",
+    "local": "egg-scripts start --daemon --env=local --title=egg-server-share-service --port 7029",
+    "inf": "egg-scripts start --daemon --env=inf --title=egg-server-share-service --port 7029",
+    "stop": "egg-scripts stop --title=egg-server-share-service",
+    "dev": "egg-bin dev --port 7029",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "qiuwenju",
+  "license": "MIT"
+}
